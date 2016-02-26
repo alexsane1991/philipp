@@ -1,0 +1,61 @@
+
+
+<div class="main">
+  <div class="teacher-section">
+    <div class="teacher-info"> <img src="img/philipp.business.card.small.png" alt="Philipp Glaninger">
+      <div class="quote small"> "Sie brauchen eine Einführung oder Fortbildung durch einen Erfahrenen Dozenten? Profitieren Sie von meiner mehrjährigen Praxis, die mich unter anderem für einige Monate in ein Special Effects Haus in Nord-Hollywood geführt hat." </div>
+    </div>
+    <div class="section course-selection">
+      <div class="regText">
+        <p>Sind Sie bereits mit Computergrundlagen vertraut und suchen nun Herausforderung mit professioneller Software? Sie kommen aus dem Bereich der Film- oder Videopostproduktion und es fehlt ihnen noch an Know How in Einzelbereichen? Ich biete 6 Jahre Erfahrung als Dozent im Medienbereich und kann Ihnen in den folgenden Bereichen weiterhelfen.</p>
+        
+        <h3>Haben Sie Interesse?</h3>
+        <p>Melden sie sich unverbindlich unter mail@filmeffects.net und wir erörtern weitere Details. </p>
+      </div>
+
+      <h3>Workshops und Kurse</h3>
+      <div class="software">
+
+        <div ng-repeat="workshop in workshops" class="softwareBlock {{workshop.theme}}">
+          <a href="{{workshop.url}}">
+            <div class="background"></div>
+            <div class="content">
+              <h4>{{workshop.title}}</h4>
+              <div class="softLogo"><img src="img/{{workshop.img}}"></div>
+              <div class="snippet">{{workshop.snippet}}</div>
+            </div>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="section">
+        <h3>Handhabung der Unterrichte</h3>
+        <p>Angeboten werden sowohl individuelle Einzelunterrichte als auch Gruppenschulungen. Der Unterrichtsinhalt richtet sich nach den Bedürfnissen der Teilnehmer und kann an vorhandene Ressourcen angepasst werden. Denkbar ist sowohl ein Frontalunterricht, als auch ein Schritt für Schritt Unterricht persönlich am Gerät. Lehrmaterial wird vom Dozenten selbst gestellt. Alternativ dazu kann die Schulung mit Material vom Auszubildenden gewählt werden. Z.B. wenn ein selbstgedrehter Ffilm geschnitten oder nachbearbeitet werden soll.</p>
+      </div>
+
+    </div>
+    <div style="clear:both"></div>
+  </div>
+
+  <div class="separator"></div>
+
+  <div class="teacher-section">
+    <div class="teacher-info">
+      <img src="img/brigitte.business.card.small.png" alt="Brigitte Gaggl">
+      <p><img src="img/bg.foto.logo.png" title="bg:foto logo" alt="bg:foto logo"/></p>
+      <p><span class="email"><a href="mailto:kontakt@brigittegaggl.com">kontakt@brigittegaggl.com</a></p>
+      <p><span class="globe"><a href="http://www.brigittegaggl.com">http://www.brigittegaggl.com</a></p>
+    </div>
+    <div class="section course-selection">
+      <h3>Kursenauswahl</h3>
+      <ul>
+        <li>Photographie Grundkurs</li>
+        <li>Lichtsetzung für Photographen</li>
+        <li>Crashkurs Avid</li>
+      </ul>
+    </div>
+    <div style="clear:both"></div>
+  </div>
+</div>
+

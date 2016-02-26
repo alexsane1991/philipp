@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" ng-app="app" ng-controller="AppCtrl">
+<head>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ --><!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]--><!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]--><!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]--><!-- Consider adding a manifest.appcache: h5bp.com/d/Offline --><!--[if gt IE 8]><!--><!--<![endif]-->
+<meta charset="utf-8">
+<!-- Use the .htaccess and remove these lines to avoid edge case issues. More info: h5bp.com/i/378 -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>{{title}}</title>
+<meta name="keywords" content="Philipp, Glaninger, Philipp Glaninger, digital artist, digital, artist, teacher, lehrer, film, effect, films, effects, filmeffects.net, demoreel, filmerstellung, movie, making, movies, tutor, tutoring, classes, unterrichten, unterricht, datenrettung, video, videosoftware, software, camera, kamera, vienna, wien, austria, österreich, Imagefilm, compositing, color, correction, farbkorrektur, postproduction, Postproduktion, schnitt, cut, 2d, 3d, animation, video, rekunstruktion, reconstruction, graphics, grafik, final cut pro, musikvideo, music, dokumentarvideo, documentary, werbefilme, DaVinci, DaVinci resolve lite, special effects, motion graphics, keying, 2Dlightblue, tracking, shots cleanup, after effects, trapcode, nuke, pf-track, mocha, fx-intensive, zorty, soundtrack, apple, color, photoshop, dvd studio pro, autodesk xsi, light, licht, ton, dramaturgie, dramaturgy, filmwelt, blue-ray, blueray, Matte, Painting, mail@filmeffects.net, Digital, Effects, Philipp, Glaninger, Digitale, Filmbearbeitung, Datenverarbeitung, Informationstechnik">
+<meta name="description" content="Digital Effects Philipp Glaninger Digitale Filmbearbeitung. Ich biete langjährige Erfahrung mit Kamera und Videosoftware. I am a digital artist offering a variety of services in the field video and film processing, compositing, 3d animation, color correction, motion graphics. Also, I provide training and courses in video processing software.">
+<!-- Mobile viewport optimized: h5bp.com/viewport -->
+<meta name="viewport" content="width=device-width">
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/style.css">
+<link href="css/skin/blue.monday/jplayer.blue.monday.css" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" href="favicon.ico">
+<!-- All JavaScript at the bottom, except this Modernizr build. Modernizr enables HTML5 elements & feature detects for optimal performance. Create your own custom Modernizr build: www.modernizr.com/download/ -->
+<script src="js/libs/modernizr-2.5.3.min.js"></script>
+<script src="js/libs/jquery-1.7.1.min.js"></script>
+
+</head>
+<body>
+<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6. chromium.org/developers/how-tos/chrome-frame-getting-started --> 
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+<div id="wrap">
+  <div id="headerWrap">
+    <div class="topLine"></div>
+    <div class="header"> <a href="http://www.youtube.com/watch?v=A-f-unmNkuE" class="demoreel">Watch the DEMOREEL</a>
+      <div class="businessCard"> <a href="#/" class="logo"></a>
+        <div class="introText">
+          <p>Ich biete langjährige Erfahrung mit Kamera und Videosoftware<br />
+            Ich arbeite zum allgemein gültigen österreichischen Tarif<br />
+            oder nach einer projektbezogenen Pauschale</p>
+          <p> <span class="email">mail@filmeffects.net</span> <span class="phone">+ 43 / (0)699 / 10961666</span> </p>
+        </div>
+        <div class="introPicture"><img src="img/business.picture.png" alt="This is me"></div>
+      </div>
+    </div>
+  </div>
+  <div id="menuWrap">
+    <div class="menu">
+      <ul class="menu">
+        <li ng-class="{ selected: isActive('/') }">
+            <a href="#/" title="">
+                <span class="menuTitle">Home</span>
+                <span class="menuTrail">Go to homepage</span>
+            </a>
+        </li>
+        <li ng-class="{ selected: isActive('/skills') }">
+            <a href="#/skills" title="">
+                <span class="menuTitle">Skills</span> 
+                <span class="menuTrail">All about movie making</span> 
+            </a> 
+        </li>
+        <li ng-class="{ selected: isActive('/workshops') }"> 
+            <a href="#/workshops" title=""> 
+                <span class="menuTitle">Workshops</span>
+                <span class="menuTrail">Tutoring and courses</span>
+            </a>
+        </li>
+        <li ng-class="{ selected: isActive('/datenrettung') || isActive('/videorekonstruktion') }">
+            <a href="#/datenrettung" title="">
+                <span class="menuTitle">Datenrettung</span>
+                <span class="menuTrail">I help restore data</span>
+            </a>
+        </li>
+        <li ng-class="{ selected: isActive('/projekte') || isActive('/demoreel') || isActive('/lebenslauf') || isActive('/impressum') }">
+            <a href="#/projekte" title="">
+                <span class="menuTitle">Über mich</span>
+                <span class="menuTrail">A short life story</span>
+            </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="mainWrap">
+
+    <ng-view></ng-view>
+
+  </div>
+</div>
+<div id="footerWrap">
+    <div id="footer">
+      <div class="businessInfo">
+        <div class="logo"></div>
+        <div class="contact">
+          <div class="email">
+            <div class="title">E-mail</div>
+            <div class="info">mail@filmeffects.net</div>
+          </div>
+          <div class="phone">
+            <div class="title">Phone</div>
+            <div class="info">+ 43 / (0)699 / 10961666</div>
+          </div>
+        </div>
+        <div class="copyright"> Digital Artist<br>
+          Copyright © 2016 </div>
+      </div>
+      <div class="menu">
+        <div class="block home">
+          <div class="title"><a href="#/">Home</a></div>
+          <ul>
+            <li><a href="#/">Demoreel</a></li>
+            <li><a href="#/">Featured Work</a></li>
+          </ul>
+        </div>
+        <div class="block film">
+          <div class="title"><a href="#/skills">Filmerstellung</a></div>
+          <ul>
+            <li><a href="#/skills">Schnitt</a></li>
+            <li><a href="#/skills">Farbkorrektur</a></li>
+            <li><a href="#/skills">Postproduction</a></li>
+            <li><a href="#/skills">Kamera</a></li>
+            <li><a href="#/skills">2D und 3D Animation</a></li>
+          </ul>
+        </div>
+        <div class="block workshop">
+          <div class="title"><a href="#/workshops">Workshops</a></div>
+          <ul>
+            <li><a href="#/workshops#philipp">Philipp Glaninger</a></li>
+            <li><a href="#/workshops#brigitte">Brigitte Gaggl</a></li>
+          </ul>
+        </div>
+        <div class="block data">
+          <div class="title"><a href="#/datenrettung">Datenrettung</a></div>
+          <ul>
+            <li><a href="#/datenrettung">Erste Maßnahmen</a></li>
+            <li><a href="#/videorekonstruktion">Video Rekonstruktion</a></li>
+          </ul>
+        </div>
+        <div class="block aboutme">
+          <div class="title"><a href="#/projekte">Über mich</a></div>
+          <ul>
+            <li><a href="#/projekte">Projekte</a></li>
+            <li><a href="#/demoreel">Demoreel</a></li>
+            <li><a href="#/lebenslauf">Lebenslauf</a></li>
+            <li><a href="#/impressum">Impressum</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="shareLinks">
+		<div class="tweet">
+			<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://filmeffects.net/">Tweet</a>
+		</div>
+		<div class="facebook">
+			<div class="fb-like" data-href="http://filmeffects.net/" data-send="false" data-layout="button_count" data-width="120" data-show-faces="false"></div>
+			<div id="fb-root"></div>
+		</div>
+		<div class="google">
+			<div class="g-plusone" data-size="medium" data-href="http://filmeffects.net/"></div>
+		</div>
+      </div>
+    </div>
+  </div>
+
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+
+
+	<!-- ******************* SHARELINKS ******************* -->
+	<!-- Twitter -->
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  
+	<!-- Google+ -->
+	<script type="text/javascript">
+	(function() {
+	var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+	po.src = 'https://apis.google.com/js/plusone.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+	})();
+	</script>
+
+	<!-- Facebook -->
+	<script>(function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+	fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script><!-- scripts concatenated and minified via build script --><script src="js/plugins.js"></script>
+	
+	<script src="js/script.js"></script>
+	<!-- end scripts -->
+
+	<!-- Google Analytics -->
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-42808638-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+	<!-- end Google Analytics -->
+</body>
+</html>

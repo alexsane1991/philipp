@@ -1,0 +1,896 @@
+/* MIXINS */
+.display-inline-block {
+  display: inline-block;
+  /* following for IE7 */
+  zoom: 1;
+  *display: inline;
+}
+/*.opacity (@percent){
+  -moz-opacity:@percent/100; 
+  opacity:@percent/100;
+  -ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=~"@{percent}");
+  filter:alpha(opacity=~"@{percent}");
+}*/
+/*  
+Sticky Footer Solution
+by Steve Hatcher 
+http://stever.ca
+http://www.cssstickyfooter.com
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+/* must declare 0 margins on everything, also for main layout components use padding, not 
+vertical margins (top and bottom) to add spacing, else those margins get added to total height 
+and your footer gets pushed down a bit more, creating vertical scroll bars in the browser */
+html,
+body {
+  height: 100%;
+}
+h1 {
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+p {
+  margin: 10px 0;
+}
+ul {
+  padding: 0;
+  list-style-position: inside;
+  margin: 10px;
+}
+span.special,
+span.was {
+  color: #b584fe;
+}
+span.wo {
+  color: #1feb7f;
+}
+div.clearer {
+  clear: both;
+}
+#wrap {
+  min-height: 100%;
+  min-width: 980px;
+  background-color: #000;
+  font-family: Arial, Trebuchet Ms, Tahoma;
+  font-size: 13px;
+  color: #fff;
+}
+#headerWrap {
+  background: url("../img/header.bgr.jpg") repeat;
+  width: 100%;
+  height: 200px;
+}
+#headerWrap .topLine {
+  height: 8px;
+  background: url("../img/top.line.jpg") no-repeat top;
+}
+#headerWrap .header {
+  background: url("../img/header.rainbow.png") no-repeat 100px top;
+  width: 980px;
+  margin: 0 auto;
+  height: 192px;
+  position: relative;
+}
+#headerWrap .header a.demoreel {
+  position: absolute;
+  top: 115px;
+  left: 30px;
+  width: 260px;
+  line-height: 46px;
+  vertical-align: middle;
+  background: url("../img/btn.demoreel.png") no-repeat;
+  padding-left: 10px;
+  font-size: 15px;
+  color: #ffffff;
+}
+#headerWrap .header div.businessCard {
+  position: relative;
+  float: right;
+  height: 190px;
+  width: 550px;
+  text-align: right;
+}
+#headerWrap .header div.businessCard a.logo {
+  display: block;
+  height: 89px;
+  width: 550px;
+  background: url("../img/business.logo.2.png") no-repeat top right;
+}
+#headerWrap .header div.businessCard div.introText {
+  font-size: 13px;
+  text-align: right;
+  width: 390px;
+  position: absolute;
+  right: 100px;
+}
+#headerWrap .header div.businessCard div.introText p {
+  margin: 5px 0;
+}
+#headerWrap .header div.businessCard div.introText span.email {
+  padding-left: 20px;
+  background: url("../img/icon.email.png") no-repeat top left;
+  margin-right: 25px;
+}
+#headerWrap .header div.businessCard div.introText span.phone {
+  padding-left: 20px;
+  background: url("../img/icon.phone.png") no-repeat top left;
+}
+#headerWrap .header div.businessCard div.introPicture {
+  margin: 0 0 0 5px;
+  position: absolute;
+  right: 0;
+}
+#headerWrap .header div.businessCard div.shareLinks {
+  float: left;
+  width: 60px;
+  overflow: visible;
+  padding: 5px 0 0 0;
+  text-align: left;
+}
+#headerWrap .header div.businessCard div.shareLinks div.fb-like {
+  margin-bottom: 4px;
+  margin-top: 4px;
+}
+#mainWrap .main div.teacher-info span.email {
+  padding-left: 20px;
+  background: url("../img/icon.email.png") no-repeat top left;
+}
+#mainWrap .main div.teacher-info span.globe {
+  padding-left: 20px;
+  background: url("../img/icon.globe.png") no-repeat top left;
+}
+/* MENU */
+#menuWrap {
+  background: url("../img/menu.bgr.jpg") repeat-x;
+  height: auto;
+}
+#menuWrap .menu {
+  width: 980px;
+  margin: 0 auto;
+  height: 55px;
+}
+#menuWrap .menu ul.menu {
+  list-style: none;
+  padding: 0;
+}
+#menuWrap .menu ul.menu li {
+  display: inline-block;
+  text-align: center;
+  padding: 6px 21px 0;
+  color: #92cafe;
+  text-shadow: 1px 1px 1px #4B4B4B;
+}
+#menuWrap .menu ul.menu li a {
+  color: #92cafe;
+}
+#menuWrap .menu ul.menu li.selected a {
+  color: #ffffff;
+}
+#menuWrap .menu ul.menu li:hover a {
+  color: #ffffff;
+}
+#menuWrap .menu ul.menu li.selected a:before,
+#menuWrap .menu ul.menu li:hover a:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 9px solid #d9f3ff;
+  border-right: 9px solid transparent;
+  border-left: 9px solid transparent;
+  margin: -7px 0 0 -10px;
+}
+#menuWrap .menu ul.menu li span.menuTitle {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+#menuWrap .menu ul.menu li span.menuTrail {
+  display: block;
+  font-size: 14px;
+  font-style: italic;
+  font-family: Times New Roman;
+}
+#mainWrap {
+  width: 100%;
+  overflow: hidden;
+  /*needs checking*/
+  /*overflow:auto;*/
+  padding-bottom: 205px;
+  /* must be same height as the footer */
+}
+/*SUBMENU*/
+#mainWrap .submenu {
+  width: 980px;
+  margin: 0 auto;
+  height: 36px;
+  position: relative;
+}
+#mainWrap .submenu ul {
+  background: #629BD8;
+  display: inline-block;
+  height: 36px;
+  border-radius: 0 0 3px 3px;
+  padding: 0 10px;
+  margin: 0;
+  position: absolute;
+}
+#mainWrap .submenu ul.aboutme {
+  right: 50px;
+}
+#mainWrap .submenu ul.daten {
+  right: 125px;
+}
+#mainWrap .submenu ul li {
+  display: inline-block;
+  text-align: center;
+  padding: 4px 5px 3px 5px;
+  text-transform: uppercase;
+  font-size: 13px;
+  margin-top: 5px;
+}
+#mainWrap .submenu ul li.selected,
+#mainWrap .submenu ul li:hover {
+  background: #BE45BA;
+  border-radius: 4px;
+}
+#mainWrap .submenu ul li a,
+#mainWrap .submenu ul li a:visited {
+  color: #ffffff;
+}
+#mainWrap .main {
+  width: 980px;
+  margin: 0 auto;
+  background: url("../img/bokeh.jpg") no-repeat;
+  min-height: 652px;
+  position: relative;
+  padding: 0 0 40px 0;
+}
+#mainWrap .main #mediaspace_wrapper {
+  width: 450px !important;
+  margin-bottom: 20px;
+  -moz-box-shadow: 0px 0px 10px #6DD1FF;
+  -webkit-box-shadow: 0px 0px 10px #6DD1FF;
+  box-shadow: 0px 0px 10px #6DD1FF;
+}
+#mainWrap .content {
+  padding-top: 20px;
+}
+#mainWrap .main .featuredWork {
+  margin-bottom: 15px;
+}
+#mainWrap .main .featuredWork h3 {
+  text-transform: uppercase;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+#mainWrap .main .featuredWork .projects .project {
+  display: inline-block;
+  zoom: 1;
+  width: 263px;
+  vertical-align: top;
+}
+#mainWrap .main .featuredWork .projects .project.project1 {
+  margin-right: 14px;
+}
+#mainWrap .main .featuredWork .projects .project.project2 {
+  margin: 0 76px;
+}
+#mainWrap .main .featuredWork .projects .project.project3 {
+  margin-left: 14px;
+}
+#mainWrap .main .featuredWork .projects .project .title {
+  text-transform: uppercase;
+  color: #71beff;
+  font-size: 18px;
+  text-shadow: 1px 1px 1px #333333;
+  text-align: center;
+}
+#mainWrap .main .featuredWork .projects .project .subtitle {
+  font-size: 14px;
+  font-family: Times New Roman;
+  font-style: italic;
+  color: #B8E1FF;
+  margin-bottom: 8px;
+  text-align: center;
+}
+#mainWrap .main .featuredWork .projects .project .screen:before {
+  display: block;
+  content: "";
+  width: 263px;
+  height: 88px;
+  background: url("../img/home.project.screen.overlay.png");
+  position: absolute;
+}
+#mainWrap .main .featuredWork .projects .project .screen img {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+#mainWrap .main .featuredWork .projects .project .description {
+  margin: 5px 0;
+  text-align: left;
+  color: #FFFFFF;
+  font-family: Helvetica;
+  font-size: 13px;
+}
+#mainWrap .main .featuredWork .projects .project .description p {
+  margin: 5px 0;
+}
+#mainWrap .main .featuredWork .projects .project .description .highlight {
+  text-transform: uppercase;
+  color: #71beff;
+  font-size: 13px;
+  font-weight: bold;
+}
+#mainWrap .main .featuredWork .projects .project a.button.youtube {
+  display: block;
+  background: url("../img/youtube.icon.png") no-repeat;
+  height: 22px;
+  line-height: 22px;
+  text-align: left;
+  padding-left: 34px;
+  color: #E04C4C;
+  margin-bottom: 4px;
+}
+#mainWrap .main .featuredWork .projects .project .moreInfo a.button {
+  width: 260px;
+  line-height: 46px;
+  vertical-align: middle;
+  background: url("../img/btn.demoreel.png") no-repeat;
+  padding-left: 10px;
+  font-size: 15px;
+}
+#mainWrap .main .infoBlock {
+  display: block;
+  padding-left: 150px;
+  margin-bottom: 20px;
+  min-height: 110px;
+}
+#mainWrap .main .infoBlock.cut {
+  background: url("../img/label.screen.cut.png") no-repeat top left;
+}
+#mainWrap .main .infoBlock.color {
+  background: url("../img/label.screen.color.png") no-repeat top left;
+}
+#mainWrap .main .infoBlock.postproduction {
+  background: url("../img/label.screen.postproduction.png") no-repeat top left;
+}
+#mainWrap .main .infoBlock.camera {
+  background: url("../img/label.screen.camera.png") no-repeat top left;
+}
+#mainWrap .main .infoBlock.animation {
+  background: url("../img/label.screen.animation.png") no-repeat top left;
+}
+#mainWrap .main .infoBlock h3 {
+  color: #69b9ff;
+  font-size: 22px;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+#mainWrap .main .infoBlock .quote {
+  float: right;
+  max-width: 400px;
+  font-size: 24px;
+  font-family: Times New Roman, Arial;
+  font-style: italic;
+  width: auto;
+  text-align: center;
+}
+/* WORKSHOPS */
+#mainWrap .main div.section {
+  margin: 10px 0;
+}
+#mainWrap .main div.quote {
+  font-size: 19px;
+  font-family: Times New Roman, Arial;
+  font-style: italic;
+  width: auto;
+  text-align: left;
+}
+#mainWrap .main div.dozentSeparator {
+  display: block;
+  height: 60px;
+  padding-left: 45px;
+  position: relative;
+  margin-top: 10px;
+}
+#mainWrap .main div.dozentSeparator div.logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+#mainWrap .main div.dozentSeparator div.separator {
+  display: block;
+  height: 2px;
+  position: absolute;
+  top: 40px;
+  background: url(../img/separator.blue.jpg) repeat-x;
+}
+#mainWrap .main div.philipp {
+  background: url(../img/business.picture.small.jpg) no-repeat 0 7px;
+}
+#mainWrap .main div.brigitte {
+  background: url(../img/business.picture.brigitte.small.jpg) no-repeat 0 7px;
+}
+#mainWrap .main div.katja {
+  background: url(../img/business.picture.katja.small.jpg) no-repeat 0 7px;
+}
+#mainWrap .main div.philipp div.logo {
+  background: url(../img/business.logo.small.png) no-repeat;
+}
+#mainWrap .main div.brigitte div.logo {
+  background: url(../img/business.logo.brigitte.small.png) no-repeat;
+}
+#mainWrap .main div.katja div.logo {
+  background: url(../img/business.logo.katja.small.png) no-repeat;
+}
+#mainWrap .main div.philipp div.separator {
+  width: 707px;
+  left: 273px;
+}
+#mainWrap .main div.brigitte div.separator {
+  width: 802px;
+  left: 178px;
+}
+#mainWrap .main div.katja div.separator {
+  width: 780px;
+  left: 200px;
+}
+/* Software */
+#mainWrap .main h3 {
+  color: #69b9ff;
+  font-size: 20px;
+  font-weight: normal;
+  margin-bottom: 5px;
+  text-shadow: 1px 1px 1px #000000;
+}
+#mainWrap .main h4 {
+  font-size: 15px;
+  font-weight: bold;
+}
+#mainWrap .main div.software:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+}
+#mainWrap .main div.softwareBlock {
+  position: relative;
+  width: 105px;
+  height: 220px;
+  margin-right: 5px;
+  text-align: center;
+  float: left;
+}
+#mainWrap .main div.softwareBlock .softLogo {
+  float: left;
+}
+#mainWrap .main div.softwareBlock.red .background {
+  background: url("../img/soft.bgr.red.png");
+  -moz-box-shadow: 0px 0px 5px #ffd5d5 inset;
+  -webkit-box-shadow: 0px 0px 5px #ffd5d5 inset;
+  box-shadow: 0px 0px 5px #ffd5d5 inset;
+}
+#mainWrap .main div.softwareBlock.orange .background {
+  background: url("../img/soft.bgr.orange.png");
+  -moz-box-shadow: 0px 0px 5px #ffd4b4 inset;
+  -webkit-box-shadow: 0px 0px 5px #ffd4b4 inset;
+  box-shadow: 0px 0px 5px #ffd4b4 inset;
+}
+#mainWrap .main div.softwareBlock.yellow .background {
+  background: url("../img/soft.bgr.yellow.png");
+  -moz-box-shadow: 0px 0px 5px #ffe69d inset;
+  -webkit-box-shadow: 0px 0px 5px #ffe69d inset;
+  box-shadow: 0px 0px 5px #ffe69d inset;
+}
+#mainWrap .main div.softwareBlock.lightgreen .background {
+  background: url("../img/soft.bgr.lightgreen.png");
+  -moz-box-shadow: 0px 0px 5px #deff98 inset;
+  -webkit-box-shadow: 0px 0px 5px #deff98 inset;
+  box-shadow: 0px 0px 5px #deff98 inset;
+}
+#mainWrap .main div.softwareBlock.bluegreen .background {
+  background: url("../img/soft.bgr.bluegreen.png");
+  -moz-box-shadow: 0px 0px 5px #b7ffe8 inset;
+  -webkit-box-shadow: 0px 0px 5px #b7ffe8 inset;
+  box-shadow: 0px 0px 5px #b7ffe8 inset;
+}
+#mainWrap .main div.softwareBlock.lightblue .background {
+  background: url("../img/soft.bgr.lightblue.png");
+  -moz-box-shadow: 0px 0px 5px #c6fdff inset;
+  -webkit-box-shadow: 0px 0px 5px #c6fdff inset;
+  box-shadow: 0px 0px 5px #c6fdff inset;
+}
+#mainWrap .main div.softwareBlock.lightpurple .background {
+  background: url("../img/soft.bgr.lightpurple.png");
+  -moz-box-shadow: 0px 0px 5px #d9ecff inset;
+  -webkit-box-shadow: 0px 0px 5px #d9ecff inset;
+  box-shadow: 0px 0px 5px #d9ecff inset;
+}
+#mainWrap .main div.softwareBlock.purple .background {
+  background: url("../img/soft.bgr.purple.png");
+  -moz-box-shadow: 0px 0px 5px #e7d4ff inset;
+  -webkit-box-shadow: 0px 0px 5px #e7d4ff inset;
+  box-shadow: 0px 0px 5px #e7d4ff inset;
+}
+#mainWrap .main div.softwareBlock.crimson .background {
+  background: url("../img/soft.bgr.crimson.png");
+  -moz-box-shadow: 0px 0px 5px #ffd1dd inset;
+  -webkit-box-shadow: 0px 0px 5px #ffd1dd inset;
+  box-shadow: 0px 0px 5px #ffd1dd inset;
+}
+#mainWrap .main div.softwareBlock.grey .background {
+  background: url("../img/soft.bgr.grey.png");
+  -moz-box-shadow: 0px 0px 5px #ffffff inset;
+  -webkit-box-shadow: 0px 0px 5px #ffffff inset;
+  box-shadow: 0px 0px 5px #ffffff inset;
+}
+#mainWrap .main div.softwareBlock.red div.readMore a {
+  color: #c85959;
+}
+#mainWrap .main div.softwareBlock.red div.readMore a:hover {
+  color: #e76868;
+}
+#mainWrap .main div.softwareBlock.orange div.readMore a {
+  color: #dd8137;
+}
+#mainWrap .main div.softwareBlock.orange div.readMore a:hover {
+  color: #fd9d4f;
+}
+#mainWrap .main div.softwareBlock.yellow div.readMore a {
+  color: #eecc2d;
+}
+#mainWrap .main div.softwareBlock.yellow div.readMore a:hover {
+  color: #f8e27c;
+}
+#mainWrap .main div.softwareBlock.lightgreen div.readMore a {
+  color: #89c92b;
+}
+#mainWrap .main div.softwareBlock.lightgreen div.readMore a:hover {
+  color: #b7ec6b;
+}
+#mainWrap .main div.softwareBlock.bluegreen div.readMore a {
+  color: #22cda4;
+}
+#mainWrap .main div.softwareBlock.bluegreen div.readMore a:hover {
+  color: #4be9c3;
+}
+#mainWrap .main div.softwareBlock.lightblue div.readMore a {
+  color: #44a0ec;
+}
+#mainWrap .main div.softwareBlock.lightblue div.readMore a:hover {
+  color: #91cdff;
+}
+#mainWrap .main div.softwareBlock.purple div.readMore a {
+  color: #9590d7;
+}
+#mainWrap .main div.softwareBlock.purple div.readMore a:hover {
+  color: #bbb8ea;
+}
+#mainWrap .main div.softwareBlock.crimson div.readMore a {
+  color: #c1527d;
+}
+#mainWrap .main div.softwareBlock.crimson div.readMore a:hover {
+  color: #d37197;
+}
+#mainWrap .main div.softwareBlock.grey div.readMore a {
+  color: #8b8b8b;
+}
+#mainWrap .main div.softwareBlock.grey div.readMore a:hover {
+  color: #bebebe;
+}
+#mainWrap .main div.softwareBlock .background,
+#mainWrap .main div.softwareBlock .content {
+  position: absolute;
+  width: 105px;
+  height: 195px;
+  margin-top: 0;
+  padding-top: 0;
+  z-index: 2;
+}
+#mainWrap .main div.softwareBlock .background {
+  height: 200px;
+  opacity: 0.66;
+  z-index: 1;
+}
+#mainWrap .main div.softwareBlock .content {
+  height: 195px;
+  margin-top: 0;
+  z-index: 2;
+}
+#mainWrap .main div.softwareBlock .content h4 {
+  color: #fff;
+  font-size: 15px;
+  font-weight: normal;
+  height: auto;
+  text-shadow: 1px 1px 1px #000000;
+  padding: 3px 0;
+}
+#mainWrap .main div.softwareBlock .content .softLogo {
+  height: 95px;
+  vertical-align: bottom;
+  position: relative;
+  text-align: center;
+  position: absolute;
+  bottom: 60px;
+}
+#mainWrap .main div.softwareBlock .content .softLogo img {
+  position: absolute;
+  bottom: 0;
+}
+#mainWrap .main div.softwareBlock .content .snippet {
+  text-align: left;
+  font-style: italic;
+  font-size: 12px;
+  padding: 0 5px;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  position: absolute;
+  bottom: 0;
+  height: 60px;
+}
+#mainWrap .main div.softwareBlock .content a {
+  color: #ffffff;
+}
+#mainWrap .main div.softwareBlock div.readMore {
+  position: absolute;
+  width: 105px;
+  top: 200px;
+  height: 20px;
+  opacity: 1;
+  z-index: 1;
+}
+#mainWrap .main div.softwareBlock div.readMore a {
+  padding-right: 5px;
+  font-size: 14px;
+  color: #69B9FF;
+}
+/* Lebeslauf */
+#mainWrap table.lebenslauf td.right-col {
+  padding-left: 10px;
+}
+#mainWrap table.lebenslauf td.left-col {
+  padding-right: 15px;
+  border-right: 2px solid #69b9ff;
+  text-align: right;
+  min-width: 170px;
+}
+#mainWrap table.lebenslauf td.mark {
+  background: url("../img/cv.timeline.mark.png") no-repeat right 5px;
+}
+#mainWrap table.lebenslauf h4 {
+  font-size: 15px;
+  font-weight: normal;
+  text-shadow: #000000 1px 1px 0;
+}
+#mainWrap table.lebenslauf .info {
+  text-align: left !important;
+}
+#mainWrap .main table.two-column {
+  margin: 20px 0;
+  width: 100%;
+}
+#mainWrap .main table.two-column td {
+  padding: 0 15px 0 0;
+}
+.fb_reset {
+  display: none;
+}
+#mainWrap div.teacher-column {
+  float: left;
+  border-right: 1px solid blue;
+  width: 235px;
+}
+#mainWrap .main div.teacher-section {
+  position: relative;
+}
+#mainWrap .main div.course-selection,
+#mainWrap .main div.course-info {
+  float: right;
+  width: 735px;
+}
+#mainWrap .main div.teacher-info {
+  float: left;
+  width: 235px;
+}
+div.separator {
+  background: url(../img/separator.blue.jpg) repeat-x;
+  height: 2px;
+}
+#mainWrap .main div.quote.small {
+  font-size: 15px !important;
+}
+#mainWrap .main div.teacher-info {
+  float: left;
+  width: 235px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+#mainWrap .main div.teacher-info > img,
+#mainWrap .main div.teacher-info > .quote {
+  margin-bottom: 15px;
+}
+#mainWrap .main div.course-intro {
+  position: relative;
+  line-height: 30px;
+  margin-bottom: 20px;
+}
+#mainWrap .main div.course-intro .quote {
+  display: inline;
+}
+#mainWrap .main div.course-info h1 {
+  font-size: 30px;
+  text-transform: uppercase;
+}
+#mainWrap .main div.course-info h2 {
+  font-size: 19px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  font-weight: normal;
+}
+#mainWrap .main div.course-info h3 {
+  font-size: 16px;
+  margin: 10px 0 0 0;
+}
+#mainWrap .main div.course-info .course {
+  margin-bottom: 20px;
+}
+/* footer */
+#footerWrap {
+  background: url("../img/footer.bgr.jpg") repeat-x;
+  position: relative;
+  margin-top: -205px;
+  /* negative value of footer height */
+  height: 205px;
+  min-width: 980px;
+  clear: both;
+}
+#footerWrap #footer {
+  width: 980px;
+  padding-top: 20px;
+  margin: 0 auto;
+  height: 185px;
+  position: relative;
+}
+#footer .businessInfo {
+  width: 300px;
+  height: 165px;
+  background: url("../img/footer.separator.jpg") no-repeat right;
+  text-align: right;
+  padding-right: 10px;
+  float: left;
+}
+#footer .businessInfo .logo {
+  height: 25px;
+  background: url("../img/footer.logo.png") no-repeat right top;
+  margin: 0 16px 20px 0;
+}
+#footer .businessInfo .contact {
+  width: 100%;
+  height: 67px;
+  background: url("../img/footer.contact.bgr.png") no-repeat right;
+  margin-bottom: 20px;
+}
+#footer .businessInfo .contact .email,
+#footer .businessInfo .contact .phone {
+  height: 30px;
+  margin: 1px 0 6px 0;
+}
+#footer .businessInfo .contact .title {
+  display: inline;
+  color: #65adeb;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #004494;
+}
+#footer .businessInfo .contact .info {
+  width: 231px;
+  padding: 7px 0 0 7px;
+  text-align: left;
+  display: inline-block;
+  color: #ffffff;
+  font-size: 13px;
+  text-shadow: 1px 1px 1px #00498a;
+}
+#footer .businessInfo .copyright {
+  color: #ffffff;
+  font-size: 12px;
+  margin-right: 18px;
+}
+#footer .menu {
+  float: left;
+  margin-left: 20px;
+  height: 185px;
+  background: url("../img/footer.icons.png") no-repeat left 132px;
+}
+#footer .menu .block {
+  float: left;
+  width: 138px;
+}
+#footer .menu .block.home {
+  width: 100px;
+}
+#footer .menu .block.film {
+  width: 153px;
+}
+#footer .menu .block.workshop {
+  width: 130px;
+}
+#footer .menu .block.data {
+  width: 144px;
+}
+#footer .menu .block.aboutme {
+  width: 100px;
+}
+#footer .menu .block .title {
+  margin-bottom: 3px;
+}
+#footer .menu .block .title a {
+  color: #65adeb;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #004494;
+}
+#footer .menu .block ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#footer .menu .block ul li {
+  line-height: 18px;
+}
+#footer .menu .block ul li a {
+  color: #ffffff;
+  font-size: 12px;
+  text-shadow: 1px 1px 1px #00498a;
+}
+#footerWrap #footer .shareLinks {
+  position: absolute;
+  right: 40px;
+  bottom: 10px;
+}
+#footerWrap #footer .shareLinks .tweet,
+#footerWrap #footer .shareLinks .facebook,
+#footerWrap #footer .shareLinks .google {
+  display: inline-block;
+}
+#footerWrap #footer .shareLinks .google {
+  width: 62px;
+}
+#footerWrap #footer .shareLinks .tweet {
+  margin-right: 10px;
+}
+#footerWrap #footer .shareLinks .facebook {
+  margin-right: 10px;
+  position: relative;
+  top: -6px;
+}
+/*Opera Fix*/
+body:before {
+  /* thanks to Maleika (Kohoutec)*/
+  content: "";
+  height: 100%;
+  float: left;
+  width: 0;
+  margin-top: -32767px;
+  /* thank you Erik J - negate effect of float*/
+}
+/* IMPORTANT
+
+You also need to include this conditional style in the <head> of your HTML file to feed this style to IE 6 and lower and 8 and higher.
+
+<!--[if !IE 7]>
+	<style type="text/css">
+		#wrap {display:table;height:100%}
+	</style>
+<![endif]-->
+
+*/
